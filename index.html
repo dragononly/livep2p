@@ -335,7 +335,7 @@ display: none !important;
                             <label for="url">Video URL<span id="https-only" class="hide"> (HTTPS only)</span>:</label>
                             <input type="text" class="form-control" id="url" name="url"
                                 placeholder="Please enter video url" required
-                                value="http://live.pccpa.cn:7002/live/movie.m3u8" />
+                                value="https://live.pccpa.cn:7002/live/movie.m3u8" />
                         </div>
                         <div class="form-group" style="display: none;">
                             <label for="type">Player:</label>
@@ -464,7 +464,7 @@ display: none !important;
                         this.videoUrl = l
 
                     } else {
-                        this.videoUrl = "http://live.pccpa.cn:7002/live/movie.m3u8"
+                        this.videoUrl = "https://live.pccpa.cn:7002/live/movie.m3u8"
                     }
 
                     this.playerType = videoUrlForm.type.value;
@@ -527,7 +527,7 @@ display: none !important;
                     }
                     const config = {
                         segments: {
-                            swarmId: "http://live.pccpa.cn:7002/live/movie.m3u8" // any unique string
+                            swarmId: "https://live.pccpa.cn:7002/live/movie.m3u8" // any unique string
                         },
                         loader: {
                             trackerAnnounce: [
