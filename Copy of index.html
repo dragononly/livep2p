@@ -257,7 +257,7 @@
             Git: <a href="https://github.com/novage/p2p-media-loader">https://github.com/novage/p2p-media-loader</a>
             <hr /> -->
         </header>
-        <div id="myshow" style="position: fixed;z-index:20;right: 32px;top:11px;padding:0px 5px">
+        <div id="myshow" style="position: fixed;z-index:20;right: 32px;top:13px;padding:0px 5px">
             ⚡
         </div>
         <div id="main-view">
@@ -339,13 +339,13 @@
                             <select class="form-control" id="type" name="type">
                                 <optgroup label="Hls.js P2P Engine (HLS only)">
                                     <option value="clappr" selected>Clappr</option>
-                                    <option value="hlsjs" >Hls.js</option>
-                                    <option value="flowplayer" >Flowplayer</option>
-                                    <option value="mediaelement" >MediaElement</option>
-                                    <option value="videojs-contrib-hlsjs" >VideoJs-Contrib-HlsJs</option>
+                                    <option value="hlsjs">Hls.js</option>
+                                    <option value="flowplayer">Flowplayer</option>
+                                    <option value="mediaelement">MediaElement</option>
+                                    <option value="videojs-contrib-hlsjs">VideoJs-Contrib-HlsJs</option>
                                     <option value="videojs-hlsjs-plugin">VideoJs-HlsJs-Plugin</option>
-                                    <option value="jwplayer" >JWPlayer</option>
-                                    <option value="dplayer" >DPlayer</option>
+                                    <option value="jwplayer">JWPlayer</option>
+                                    <option value="dplayer">DPlayer</option>
                                     <option value="plyr">Plyr</option>
                                 </optgroup>
                                 <optgroup label="Shaka P2P Engine (HLS and DASH)">
@@ -369,9 +369,6 @@
         </div>
 
         <script>
-            document.addEventListener('contextmenu', function (e) {
-                    e.preventDefault();
-                });
             function waitForGlobalObject(objectName, objectNextName) {
                 return new Promise((resolve) => {
                     function check() {
@@ -466,7 +463,7 @@
                     } else {
                         this.videoUrl = "https://wowza.peer5.com/live/smil:bbb_abr.smil/playlist.m3u8"
                     }
-                    //选择视频播放器
+
                     this.playerType = videoUrlForm.type.value;
                     // if (!this.isP2PSupported) {
                     //     this.playerType = 'shakaplayer';
@@ -1020,7 +1017,6 @@
                     video.setAttribute("playsinline", "");
                     // video.setAttribute("muted", true);
                     video.setAttribute("autoplay", true);
-                     video.setAttribute("pictureInPictureToggle");
                     // video.setAttribute("controls", "");
                     this.videoContainer.appendChild(video);
 
@@ -1069,7 +1065,7 @@
                         width: "100%",
                         height: "100%",
                         mute: false,
-                     
+                   
                         controls:'controls',
                         playsinline:'',
                         'x5-playsinline':'',
@@ -1081,9 +1077,7 @@
                             playInline: '',
                         },
                     };
-                    video.addEventListener('enterpictureinpicture', function () {
-                        document.exitPictureInPicture();
-                    });
+
                     if (isShaka) {
                         await scriptsPromise;
                         await loadScript(
@@ -1214,7 +1208,6 @@
                     // video.setAttribute("muted", "");
                     video.setAttribute("autoplay", "");
                     // video.setAttribute("controls", "");
-                    video.setAttribute("disablePictureInPicture");
                     outer.appendChild(video);
                     this.videoContainer.appendChild(outer);
 
@@ -1273,7 +1266,6 @@
                     video.setAttribute("autoplay", "");
                     // video.setAttribute("controls", "");
                     outer.appendChild(video);
-                    video.setAttribute("disablePictureInPicture");
                     this.videoContainer.appendChild(outer);
 
                     await scriptPromise;
@@ -1315,7 +1307,6 @@
                     video.setAttribute("playsinline", "");
                     video.setAttribute("muted", "");
                     video.setAttribute("autoplay", "");
-                    video.setAttribute("disablePictureInPicture");
                     this.videoContainer.appendChild(video);
 
                     await scriptPromise;
@@ -1421,7 +1412,6 @@
                     // video.setAttribute("muted", "");
                     video.setAttribute("autoplay", "");
                     // video.setAttribute("controls", "");
-                    video.setAttribute("disablePictureInPicture");
                     this.videoContainer.appendChild(video);
 
                     var level = document.createElement("select");
@@ -1450,7 +1440,6 @@
                     // video.setAttribute("muted", "");
                     video.setAttribute("autoplay", "");
                     // video.setAttribute("controls", "");
-                    video.setAttribute("disablePictureInPicture");
                     this.videoContainer.appendChild(video);
 
                     var level = document.createElement("select");
@@ -1497,7 +1486,6 @@
                     // video.setAttribute("muted", "");
                     video.setAttribute("autoplay", "");
                     // video.setAttribute("controls", "");
-                    video.setAttribute("disablePictureInPicture");
                     this.videoContainer.appendChild(video);
 
                     var level = document.createElement("select");
